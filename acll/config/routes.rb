@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :teams
 
-  resources :kids
-
-  resources :users
+  resources :users do
+  	resources :kids
+  end
 end
