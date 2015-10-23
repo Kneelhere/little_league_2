@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def create
-      @user = User.create(user_params)
+      @user = User.new(user_params)
       if @user.save
           login(@user)
           flash[:success] = "Welcome!"
@@ -30,6 +30,13 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    id = params[:id]
+    user = User.find(id)
+    user.destroy
+    redirect_to root_path
   end
 
 private
