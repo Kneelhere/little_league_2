@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'coaches/index'
+
   get 'sessions/new' => 'sessions#new'
 
   post 'sessions/create' => 'sessions#create'
