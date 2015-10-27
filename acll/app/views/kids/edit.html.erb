@@ -1,2 +1,34 @@
-<h1>Kids#edit</h1>
-<p>Find me in app/views/kids/edit.html.erb</p>
+<div class="container">
+<h1 class="edit-performer-header">Edit Your Kid's Profile</h1>
+
+<div class="col-md-8">
+
+      <%= form_for @kid, url: user_kid_path do |f| %>
+	    <div class="form-group">
+	      <%= f.text_field :first_name, placeholder: 'First Name', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :last_name, placeholder: 'Last Name', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :dob, placeholder: 'MM/DD/YYYY', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :address, placeholder: 'Address', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :city, placeholder: 'City', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.number_field :zip_code, placeholder: 'Zip Code', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :guardian_first_name, placeholder: 'Guardian First Name', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :guardian_last_name, placeholder: 'Guardian Last Name', class: "form-control" %>
+	    </div>
+      <%= f.submit "Edit", class: "ghost-button" %>
+</div>
+<% end %>
+</div>
