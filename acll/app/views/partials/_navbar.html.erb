@@ -16,6 +16,7 @@
 
 	      	<li><%= link_to "Home", "/", class: "nav-text" %></li>
 	      	<li><%= link_to "Leagues", leagues_path, class: "nav-text" %></li>
+	      	<li><%= link_to "Board", crews_index_path, class: "nav-text" %></li>
 	      		<% if current_user %>
 	      			<li><%= link_to "Profile", user_path(current_user.id), class: "nav-text" %></li>
 	      			<li><%= link_to "Log Out", sessions_path, method: :delete, class: "nav-text" %></li>
