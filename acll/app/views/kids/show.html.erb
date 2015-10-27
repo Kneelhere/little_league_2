@@ -1,2 +1,8 @@
-<h1>Kids#show</h1>
-<p>Find me in app/views/kids/show.html.erb</p>
+<h3><%= @kid.first_name %> </h3>
+<h3><%= @kid.last_name %> </h3>
+<h3><%= @kid.address %> </h3>
+<h3><%= @kid.zip_code %> </h3>
+<h3><%= @kid.dob %> </h3>
+<h3><%= @kid.guardian_first_name %> </h3>
+<h3><%= @kid.guardian_last_name %> </h3>
+<%= button_to "Edit Information!", edit_user_kid_path(@user,@kid), method: :get, class: "btn btn-default text-center" %>
