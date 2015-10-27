@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'crews/index'
+
   get 'coaches/index'
 
   get 'sessions/new' => 'sessions#new'
