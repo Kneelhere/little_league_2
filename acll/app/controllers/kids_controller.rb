@@ -33,6 +33,21 @@ class KidsController < ApplicationController
   end
 
   def edit
+        @kid = Kid.find(params[:id])
+        if current_user.id  == @kid.user_id
+            render :edit
+        else
+            redirect_to root_path
+        end
+  end
+
+  def update
+    @kid = Kid.find(params[:id])    
+        if @kid.update(kid_params)
+          redirect_to user_kid_path
+        else
+          render :edit
+        end
   end
 
   private
