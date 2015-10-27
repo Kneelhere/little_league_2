@@ -1,4 +1,6 @@
 <h1>Leagues</h1>
-	<div class='col-sm-10 col-md-8'>
-		<li>Minors</li>
-	</div>
+	<% @leagues.each do |l| %>
+		<div class='col-sm-10 col-md-8'>
+			<%= link_to l.name, league_path(@leagues), method: :get %>
+		</div>
+	<% end %>

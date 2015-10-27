@@ -1,12 +1,13 @@
 class KidsController < ApplicationController
   def index
+    @kids = Kid.all
   end
 
   def show
       id = params[:id]
 
       @kid = Kid.find(params[:id])
-      if current_kid.id == @kid.id
+      if current_user.id == @kid.id
         render :show
       else
         redirect_to root_path
@@ -19,9 +20,10 @@ class KidsController < ApplicationController
 
   def create
       @kid = Kid.new(kid_params)
+      @kid.user_id = current_user.id
       if @kid.save
           flash[:success] = "Welcome!"
-          redirect_to user_kid_path(@user)
+          redirect_to("/users/#{@kid.user_id}")
       else
           flash[:danger] = "It failed!"
           render 'new'
@@ -34,6 +36,6 @@ class KidsController < ApplicationController
   private
 
   def kid_params
-    params.require(:kid).permit(:user_id, :team_id, :first_name, :last_name, :address, :city, :zip_code, :league, :coach, :user_id, :team_id, :guardian_first_name, :guardian_last_name)
+    params.require(:kid).permit(:first_name, :last_name, :address, :city, :zip_code, :league, :coach, :user_id, :team_id, :guardian_first_name, :guardian_last_name)
   end
 end

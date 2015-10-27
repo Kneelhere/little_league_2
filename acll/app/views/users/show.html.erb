@@ -1,5 +1,6 @@
 <h1>Welcome!</h1>
   <div class="text-center">
     <%= button_to "Signup Your Kid!", new_user_kid_path(@user), method: :get, class: "btn btn-default text-center" %>
+    <%= button_to "View Signed Up Kids", user_kids_path(@user), method: :get, class: "btn btn-default text-center" %>
   </div>
 
