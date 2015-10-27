@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   get '/' => 'welcome#index'
 
-  resources :leagues
-
-  resources :teams
+  resources :leagues do 
+  	resources :teams
+  end
 
   resources :users do
   	resources :kids
