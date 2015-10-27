@@ -1,12 +1,14 @@
 class KidsController < ApplicationController
   def index
-    @kids = Kid.all
+    @user = User.find(params[:user_id])
+    @kid = Kid.all
   end
 
   def show
+      @user = User.find(params[:user_id])
       id = params[:id]
-
       @kid = Kid.find(params[:id])
+      @user = User.find(params[:id])
       if current_user.id == @kid.id
         render :show
       else

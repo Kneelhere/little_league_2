@@ -1,6 +1,6 @@
 <h1>Your Kids</h1>
-<% @kids.each do |k| %>
+<% @kid.each do |k| %>
 	<div class='col-sm-10 col-md-8'>
-		<%= link_to k.first_name, user_kids_path(@kids), method: :get %>
+		<%= link_to k.first_name, user_kid_path(@user,k), method: :get %>
 	</div>
 	<%end%>

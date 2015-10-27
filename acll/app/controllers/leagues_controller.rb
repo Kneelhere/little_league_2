@@ -5,7 +5,6 @@ class LeaguesController < ApplicationController
 
   def show
       id = params[:id]
-      byebug
       @league = League.find(params[:id])
   end
 
