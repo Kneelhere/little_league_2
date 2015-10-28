@@ -1,14 +1,22 @@
 class KidsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @kid = Kid.all
+    if current_user == @user
+      @kid = Kid.find_by_id(:id)
+      @kid = Kid.all
+    elsif current_user
+      redirect_to user_kids_path(current_user.id)
+    else
+      redirect_to root_path
+    end
+
   end
 
   def show
       @user = User.find(params[:user_id])
       id = params[:id]
       @kid = Kid.find(params[:id])
-      @user = User.find(params[:id])
+      @user = User.find_by_id(@kid.user_id)
       if current_user.id == @kid.id
         render :show
       else

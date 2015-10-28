@@ -4,22 +4,22 @@ class LeaguesController < ApplicationController
   end
 
   def show
-      id = params[:id]
-      @league = League.find(params[:id])
+    id = params[:id]
+    @league = League.find(params[:id])
   end
 
   def new
   end
 
   def create
-      @league = League.new(league_params)
-      if @league.save
-          flash[:success] = "Welcome!"
-          redirect_to leagues_path
-      else
-          flash[:danger] = "It failed!"
-          render 'new'
-      end
+    @league = League.new(league_params)
+    if @league.save
+        flash[:success] = "Welcome!"
+        redirect_to leagues_path
+    else
+        flash[:danger] = "It failed!"
+        render 'new'
+    end
   end
 
   def edit
