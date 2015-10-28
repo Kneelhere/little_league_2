@@ -1,0 +1,6 @@
+<h1>Leagues</h1>
+	<% @leagues.each do |l| %>
+		<div class='col-sm-10 col-md-8'>
+			<%= link_to l.name, league_teams_path(l), method: :get %>
+		</div>
+	<% end %>

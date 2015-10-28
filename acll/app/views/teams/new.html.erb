@@ -1,0 +1,16 @@
+<h1> Create New Team for <%= @league.name %> </h1>    
+    <%= form_for @team, url: league_teams_path do |f| %> 
+	    <div class="form-group">
+	      <%= f.text_field :name, placeholder: 'Name', class: "form-control", required: true %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :coach1, placeholder: 'Head Coach', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :coach2, placeholder: 'Assistant Coach', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :coach3, placeholder: 'Assistant Coach', class: "form-control"%>
+	    </div>
+	    <%= f.submit "Create", class: "ghost-button" %>
+ 	<% end %>

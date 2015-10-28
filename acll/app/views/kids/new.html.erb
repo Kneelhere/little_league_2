@@ -1,0 +1,28 @@
+<h1>Signup Your Kid!</h1> 
+    <%= form_for @kid, url: user_kids_path do |f| %> 
+	    <div class="form-group">
+	      <%= f.text_field :first_name, placeholder: 'First Name', class: "form-control", required: true %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :last_name, placeholder: 'Last Name', class: "form-control", required: true %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :dob, placeholder: 'MM/DD/YYYY', class: "form-control", required: true %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :address, placeholder: 'Address', class: "form-control", required: true %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :city, placeholder: 'City', class: "form-control", required: true %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.number_field :zip_code, placeholder: 'Zip Code', class: "form-control", required: true %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :guardian_first_name, placeholder: 'Guardian First Name', class: "form-control", required: true %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :guardian_last_name, placeholder: 'Guardian Last Name', class: "form-control", required: true %>
+	    </div>
+	    <%= f.submit "Signup!", class: "ghost-button" %>
+ 	<% end %>
