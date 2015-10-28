@@ -1,2 +1,22 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+<h1 class="edit-performer-header">Edit Your Settings</h1>
+
+<div class="col-md-8">
+
+      <%= form_for @user do |f| %>
+	    <div class="form-group">
+	      <%= f.email_field :email, placeholder: 'Email', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.password_field :password, placeholder: 'Password', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :first_name, placeholder: 'First Name', class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	      <%= f.text_field :last_name, placeholder: 'Last Name', class: "form-control" %>
+	    </div>
+      <%= f.submit "Edit", class: "ghost-button" %>
+</div>
+<% end %>
+</div>
